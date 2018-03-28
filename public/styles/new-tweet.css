@@ -24,6 +24,7 @@
   background-color: #eee;
   margin :2em;
   padding: 5px;
+  display: none;
 }
 
 .new-tweet input {

@@ -28,3 +28,32 @@ nav {
   z-index:10001;
 }
 
+#nav-bar button {
+  float:right;
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #40E0D0;
+}
+
+#nav-bar button .editor {
+  height: 40px;
+  margin: 5px;
+}
+
+#nav-bar button .compose {
+  position: relative;
+  bottom: 15px;
+  margin: 10px;
+  font-size: 150%;
+  color:#008B8B;
+}
+
+#nav-bar button:hover .compose {
+  color: white;
+}
+
+#nav-bar button:hover {
+  background-color: #20B2AA;
+}
+
