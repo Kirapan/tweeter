@@ -1,0 +1,38 @@
+$margin: 10px;
+
+.new-tweet {
+  border : 1px solid grey;
+  border-radius: 10px;
+  background-color: #eee;
+  margin :2em;
+  padding: 5px;
+  display: none;
+
+  textarea {
+    padding: 10px;
+    width: 95%;
+    margin: $margin;
+  }
+
+  .counter {
+    float: right;
+    margin-right: $margin;
+  }
+
+  .warning {
+    color: red;
+  }
+
+  h2 {
+    border-bottom: 1px solid black;
+    margin: $margin;
+  }
+
+  input {
+    margin: $margin;
+  }
+}
+
+
+
+

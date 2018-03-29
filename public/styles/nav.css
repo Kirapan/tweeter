@@ -1,4 +1,4 @@
-nav {
+#nav-bar {
   position: fixed;
   height: 80px;
   top: 0;
@@ -10,50 +10,36 @@ nav {
   padding-right: 2em;
   padding-bottom: 0em;
   padding-top: 0em;
-  z-index:10000;
-}
+  z-index: 10000; }
+  #nav-bar .logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+    z-index: 10001; }
+  #nav-bar .header {
+    font-size: 200%;
+    float: left;
+    margin-left: 10px;
+    line-height: 80px;
+    z-index: 10001; }
+  #nav-bar button {
+    float: right;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #40E0D0; }
+  #nav-bar button .editor {
+    height: 40px;
+    margin: 5px; }
+  #nav-bar button .compose {
+    position: relative;
+    bottom: 15px;
+    margin: 10px;
+    font-size: 150%;
+    color: #008B8B; }
+  #nav-bar button:hover .compose {
+    color: white; }
+  #nav-bar button:hover {
+    background-color: #20B2AA; }
 
-#nav-bar .logo {
-  width: 80px;
-  height: 80px;
-  float: left;
-  z-index:10001;
-}
-
-#nav-bar .header {
-  font-size: 200%;
-  float: left;
-  margin-left: 10px;
-  line-height: 80px;
-  z-index:10001;
-}
-
-#nav-bar button {
-  float:right;
-  border: 1px solid black;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: #40E0D0;
-}
-
-#nav-bar button .editor {
-  height: 40px;
-  margin: 5px;
-}
-
-#nav-bar button .compose {
-  position: relative;
-  bottom: 15px;
-  margin: 10px;
-  font-size: 150%;
-  color:#008B8B;
-}
-
-#nav-bar button:hover .compose {
-  color: white;
-}
-
-#nav-bar button:hover {
-  background-color: #20B2AA;
-}
-
+/*# sourceMappingURL=nav.css.map */
