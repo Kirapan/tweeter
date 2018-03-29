@@ -20,6 +20,7 @@ $(document).ready(function(){
         loadFirstTweet();
       })
       $(this)[0].reset();
+      $(this).find('.counter').text(140);
     }
   })
 
