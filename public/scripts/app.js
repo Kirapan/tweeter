@@ -15,23 +15,22 @@ $(document).ready(function(){
     } else {
       let data = $(this).serialize();
       $.post("/tweets", data, function (data) {
-        // TODO: clear out existing tweets
-       //$('#old-tweets').empty();
-        loadFirstTweet();
+       //$('#old-tweets').empty(); can be used should all posts need to be loaded.
+        loadFirstTweet(); //need to replace with loadTweets() instead;
       })
       $(this)[0].reset();
       $(this).find('.counter').text(140);
     }
   })
-
+//load all the tweets in the database
   loadTweets();
-
+//Toggle the compose new tweet form
   $('#nav-bar button').on('click', function () {
     $('.new-tweet').slideToggle('slow');
     $('.new-tweet textarea').focus();
   })
 })
-
+//create the DOM structure for new tweets
 function createTweetElement(tweet) {
   let $tweet = $('<article>').addClass('tweet');
   let $header = $('<header>').addClass('tweet-header');
@@ -52,7 +51,7 @@ function createTweetElement(tweet) {
   $footer.append($like)
   return $tweet;
 }
-
+//
 function loadFirstTweet () {
   $.getJSON('http://localhost:8080/tweets', function (data) {
     return $('#old-tweets').prepend(createTweetElement(data[data.length - 1]));
