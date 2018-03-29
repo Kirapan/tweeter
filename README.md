@@ -20,3 +20,7 @@ This repository is the starter code for the project: Students will fork and clon
 - mongodb
 - flash-message
 - md5
+
+## Screenshot
+
+!['Main Page'](https://github.com/Kirapan/tweeter/blob/master/docs/Tweeter_main.png)
