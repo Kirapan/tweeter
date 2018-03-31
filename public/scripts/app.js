@@ -22,6 +22,18 @@ $(document).ready(function(){
       $(this).find('.counter').text(140);
     }
   })
+//like button event handler
+  $('#old-tweets').on('click', '.fa-heart', function(ev) {
+    let tweetID = $(this).attr('data-tweet-id');
+    $.ajax ({
+      url: `/tweets/${tweetID}`,
+      method: "PUT",
+      success: function () {
+       $(this).toggleClass('liked');
+      }
+    });
+  });
+
 //load all the tweets in the database
   loadTweets();
 //Toggle the compose new tweet form
@@ -46,12 +58,19 @@ function createTweetElement(tweet) {
   let $footer = $('<footer>')
   $tweet.append($footer);
   let $timestamp = $('<p>').addClass('timestamp').text(tweet.created_at);
-  let $like = $('<img>').addClass('like').attr('src',"/images/likebottons.png");
+  let $likes = $('<p>').text(`likes: ${tweet.like}`)
+  let $like = $('<i>').addClass("fas fa-heart").attr("data-likes",tweet.like).attr('data-tweet-id',tweet._id);
+  if (tweet.like_status === 'liked') {$like.addClass('liked')};
+  let $share = $('<i>').addClass("fas fa-flag");
+  let $flag = $('<i>').addClass("fas fa-retweet");
+  $footer.append($likes);
+  $footer.append($like);
+  $footer.append($share);
+  $footer.append($flag);
   $footer.append($timestamp);
-  $footer.append($like)
   return $tweet;
 }
-//
+
 function loadFirstTweet () {
   $.getJSON('http://localhost:8080/tweets', function (data) {
     return $('#old-tweets').prepend(createTweetElement(data[data.length - 1]));

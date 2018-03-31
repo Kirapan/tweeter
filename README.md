@@ -20,6 +20,7 @@ This repository is the starter code for the project: Students will fork and clon
 - mongodb
 - flash-message
 - md5
+- method-override
 
 ## Screenshot
 

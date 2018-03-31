@@ -1,26 +1,4 @@
-$border-radius: 10px;
-$opacity1: 1;
-$opacity2: 0.8;
-$opacity3: 0;
-
-article.tweet {
-  border: 1px solid #D3D3D3;
-  margin: 2em;
-  border-radius: $border-radius;
-  height: 290px;
-
-  .avatars {
-    width: 80px;
-    background-color: #6495ED;
-    margin: 5px;
-    border-radius: $border-radius;
-    float: left;
-  }
-}
-
-article.tweet:hover {
-  border: 1px solid #696969;
-}
+@import "style";
 
 article {
   .fullname {
@@ -41,12 +19,10 @@ article {
   }
 }
 
-
-.tweet:hover .fullname {
-  opacity: $opacity1;
-}
-.tweet:hover .username {
-  opacity: $opacity1;
+.tweet:hover {
+  .fullname, .username {
+    opacity: $opacity1;
+  }
 }
 
 .tweet-header {
@@ -58,7 +34,20 @@ article {
 }
 
 
-.tweet {
+article.tweet {
+  border: 1px solid #D3D3D3;
+  margin: 2em;
+  border-radius: $border-radius;
+  height: 290px;
+
+  .avatars {
+    width: 80px;
+    background-color: #6495ED;
+    margin: 5px;
+    border-radius: $border-radius;
+    float: left;
+  }
+
   > p {
     height:120px;
     line-height: 50px;
@@ -67,32 +56,51 @@ article {
     border-bottom: 1px solid #DCDCDC;
   }
 
-  > footer p {
-
+  > footer .timestamp {
     margin: 5px;
     float:left;
     position: relative;
     top:-15px;
   }
 
-  > footer img {
-    float:right;
-    width: 80px;
-    margin: 5px;
-    position: relative;
-    top:-20px;
-    opacity: $opacity3;
+  > footer {
+      i {
+        float: right;
+        width: 20px;
+        margin: 5px;
+        position: relative;
+        top:-15px;
+        opacity: $opacity3;
+        color: #20B2AA;
+      }
+      p {
+        float: right;
+        margin: 5px;
+        position: relative;
+        top:-15px;
+      }
+  }
+
+  &:hover {
+    border: 1px solid #696969;
+
+    > header.tweet-header {
+      background-color: #D3D3D3;
+      opacity: $opacity1;
+    }
+
+    > footer {
+      input, i {
+        opacity: $opacity1;
+      }
+      i.liked {
+        color: red;
+      }
+    }
   }
 }
 
-.tweet:hover {
-  > header.tweet-header {
-    background-color: #D3D3D3;
-    opacity: $opacity1;
-  }
-
-  > footer img {
-    opacity: $opacity1;
-  }
+article.tweet > footer .liked {
+  color: red;
 }
 

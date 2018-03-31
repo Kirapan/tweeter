@@ -1,9 +1,17 @@
   "use strict";
 
 const userHelper    = require("../lib/util/user-helper")
-
 const express       = require('express');
 const tweetsRoutes  = express.Router();
+const methodOverride = require('method-override');
+const cookieSession = require('cookie-session');
+const app           = express();
+app.use(methodOverride('_method'));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['TwEeTeRpRoJeCt'],
+  maxAge: 24 * 60 * 60 * 1000
+}));
 
 module.exports = function(DataHelpers) {
 
@@ -29,7 +37,9 @@ module.exports = function(DataHelpers) {
       content: {
         text: req.body.text
       },
-      created_at: Date.now()
+      created_at: Date.now(),
+      like: 0,
+      like_status: "unliked"
     };
 
     DataHelpers.saveTweet(tweet, (err) => {
@@ -40,7 +50,17 @@ module.exports = function(DataHelpers) {
       }
     });
   });
+//endpoint for liking the tweets
+  tweetsRoutes.put("/:id", function(req, res) {
+      DataHelpers.likeTweet(req.params.id, (err, tweets) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+        } else {
+          res.status(201).send();
+        }
+      });
+    });
 
+    //}
   return tweetsRoutes;
-
 }
