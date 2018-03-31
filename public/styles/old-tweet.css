@@ -36,7 +36,7 @@ article.tweet {
   article.tweet > p {
     height: 120px;
     line-height: 50px;
-    font-size: 150%;
+    font-size: 120%;
     padding-left: 20px;
     border-bottom: 1px solid #DCDCDC; }
   article.tweet > footer .timestamp {
@@ -66,8 +66,5 @@ article.tweet {
       opacity: 1; }
     article.tweet:hover > footer i.liked {
       color: red; }
-
-article.tweet > footer .liked {
-  color: red; }
 
 /*# sourceMappingURL=old-tweet.css.map */
