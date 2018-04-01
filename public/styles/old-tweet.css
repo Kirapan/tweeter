@@ -67,4 +67,26 @@ article.tweet {
     article.tweet:hover > footer i.liked {
       color: red; }
 
+@media (max-width: 460px) {
+  article {
+    width: 80%; }
+
+  article.tweet p {
+    font-size: 100%; } }
+@media (max-width: 380px) {
+  article.tweet p {
+    font-size: 80%;
+    height: 160px; }
+  article.tweet .avatars {
+    width: 60px; }
+  article.tweet > footer {
+    height: 80%; }
+    article.tweet > footer p {
+      display: none; }
+
+  article .fullname {
+    display: none; }
+  article .tweet-header {
+    height: 80px; } }
+
 /*# sourceMappingURL=old-tweet.css.map */

@@ -21,9 +21,14 @@ body {
  */
 main {
   width: 450px;
-  height: 4000px;
   background-color: white;
   padding-top: 140px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media (max-width: 460px) {
+  main {
+    width: 100%;
+  }
 }

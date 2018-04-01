@@ -100,4 +100,41 @@ article.tweet {
   }
 }
 
+@media (max-width: 460px) {
+  article {
+    width: 80%;
+  }
+  article.tweet {
+    p {
+      font-size: 100%;
+    }
+  }
+}
+
+@media (max-width : 380px) {
+  article.tweet {
+    p {
+      font-size: 80%;
+      height: 160px;
+    }
+    .avatars {
+      width: 60px;
+    }
+    > footer {
+      height: 80%;
+      p {
+        display: none;
+      }
+    }
+  }
+  article {
+    .fullname {
+      display: none;
+    }
+    .tweet-header {
+      height: 80px;
+    }
+  }
+}
+
 

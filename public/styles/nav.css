@@ -42,4 +42,13 @@
   #nav-bar button:hover {
     background-color: #20B2AA; }
 
+@media (max-width: 460px) {
+  #nav-bar button .compose {
+    display: none; }
+  #nav-bar button {
+    width: 30%; } }
+@media (max-width: 380px) {
+  #nav-bar .header {
+    display: none; } }
+
 /*# sourceMappingURL=nav.css.map */

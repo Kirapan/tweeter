@@ -58,7 +58,25 @@
 
 }
 
+@media (max-width: 460px) {
+  #nav-bar {
+    button .compose {
+      display: none;
+    }
 
+    button {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width : 380px) {
+  #nav-bar {
+    .header {
+      display: none;
+    }
+  }
+}
 
 
 

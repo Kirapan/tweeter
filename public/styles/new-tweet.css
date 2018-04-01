@@ -20,4 +20,8 @@
   .new-tweet input {
     margin: 10px; }
 
+@media (max-width: 460px) {
+  .new-tweet {
+    width: 80%; } }
+
 /*# sourceMappingURL=new-tweet.css.map */
