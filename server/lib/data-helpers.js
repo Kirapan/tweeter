@@ -28,7 +28,7 @@ module.exports = function makeDataHelpers(db) {
           const sortNewestFirst = (a, b) => a.created_at - b.created_at;
           callback(null, results.sort(sortNewestFirst));
         }
-      })
+      });
     },
     //like a tweet
     likeTweet: function (id, callback) {
@@ -44,7 +44,7 @@ module.exports = function makeDataHelpers(db) {
             } else {
               callback(null, result);
             }
-          })
+          });
         } else {
           db.collection('tweets').findOneAndUpdate(filter, {$set:{"like_status":'unliked'}});
           db.collection('tweets').findOneAndUpdate(filter, {$inc:{"like": -1}}, (err, result) => {
