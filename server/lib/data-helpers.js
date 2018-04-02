@@ -53,10 +53,10 @@ module.exports = function makeDataHelpers(db) {
             } else {
               callback(null, result);
             }
-          })
+          });
         }
 
-      })
+      });
     }
   };
 };

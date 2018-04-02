@@ -37,11 +37,23 @@ $(document).ready(function(){
 //load all the tweets in the database
   loadTweets();
 //Toggle the compose new tweet form
-  $('#nav-bar button').on('click', function () {
+  $('#nav-bar .compose').on('click', function () {
     $('.new-tweet').slideToggle('slow');
     $('.new-tweet textarea').focus();
-  })
-})
+  });
+
+  $('#nav-bar .register').on('click', function () {
+    $('main .register-form').slideToggle('slow');
+  });
+
+  $('#nav-bar .login').on('click', function () {
+    $('main .login-form').slideToggle('slow');
+  });
+
+  $('main .register-form').on('submit', function (){
+    ev.preventDefault();
+  });
+});
 //create the DOM structure for new tweets
 function createTweetElement(tweet) {
   let $tweet = $('<article>').addClass('tweet');

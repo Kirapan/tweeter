@@ -36,11 +36,27 @@
       <button>
         <img class="editor" src="/images/editor.png">
         <span class='compose'>Compose</span>
+        <button class ='login'>Login</button>
+        <button class='register'>Register</button>
       </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <section class='register-form'>
+        <form>
+          <textarea name="userName" placeholder="What would you like to be called?"></textarea>
+          <textarea name="passWord" placeholder="0123456789"></textarea>
+          <input type="submit" value="Register">
+        </form>
+      </section>
+      <section  class='login-form'>
+        <form>
+          <textarea name="userName" placeholder="Username"></textarea>
+          <textarea name="passWord" placeholder="Password"></textarea>
+          <input type="submit" value="Login">
+        </form>
+      </section>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form>

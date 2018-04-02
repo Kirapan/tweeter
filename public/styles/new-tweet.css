@@ -20,6 +20,9 @@
   .new-tweet input {
     margin: 10px; }
 
+.login-form, .register-form {
+  display: none; }
+
 @media (max-width: 460px) {
   .new-tweet {
     width: 80%; } }
