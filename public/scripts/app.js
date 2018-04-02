@@ -9,7 +9,7 @@ $(document).ready(function(){
     ev.preventDefault();
     let textarea = $(this).find('textarea').val();
     if (textarea === "") {
-      $.flash('No tweet found!')
+      $.flash('No tweet found!');
     } else if (textarea.length > 140) {
       $.flash('Your tweet is too lengthy.');
     } else {
@@ -17,11 +17,11 @@ $(document).ready(function(){
       $.post("/tweets", data, function (data) {
        //$('#old-tweets').empty(); can be used should all posts need to be loaded.
         loadFirstTweet(); //need to replace with loadTweets() instead;
-      })
+      });
       $(this)[0].reset();
       $(this).find('.counter').text(140);
     }
-  })
+  });
 //like button event handler
   $('#old-tweets').on('click', '.fa-heart', function(ev) {
     let tweetID = $(this).attr('data-tweet-id');
@@ -50,9 +50,10 @@ $(document).ready(function(){
     $('main .login-form').slideToggle('slow');
   });
 
-  $('main .register-form').on('submit', function (){
-    ev.preventDefault();
-  });
+  //$('main .register-form').on('submit', function (){
+    //ev.preventDefault();
+
+  //});
 });
 //create the DOM structure for new tweets
 function createTweetElement(tweet) {
@@ -70,7 +71,7 @@ function createTweetElement(tweet) {
   let $footer = $('<footer>')
   $tweet.append($footer);
   let $timestamp = $('<p>').addClass('timestamp').text(tweet.created_at);
-  let $likes = $('<p>').text(`likes: ${tweet.like}`)
+  let $likes = $('<p>').text(`likes: ${tweet.like}`);
   let $like = $('<i>').addClass("fas fa-heart").attr("data-likes",tweet.like).attr('data-tweet-id',tweet._id);
   if (tweet.like_status === 'liked') {$like.addClass('liked')};
   let $share = $('<i>').addClass("fas fa-flag");
@@ -86,21 +87,21 @@ function createTweetElement(tweet) {
 function loadFirstTweet () {
   $.getJSON('http://localhost:8080/tweets', function (data) {
     return $('#old-tweets').prepend(createTweetElement(data[data.length - 1]));
-  })
+  });
 }
 
 function loadTweets() {
    $.getJSON('http://localhost:8080/tweets', function (data) {
     return renderTweets(data);
-  })
+  });
 }
 
 function renderTweets(tweets) {
   tweets.sort(function (tweetA, tweetB) {
     return tweetB.created_at - tweetA.created_at;
-  })
+  });
   tweets.forEach(function (tweet) {
     return $('#old-tweets').append(createTweetElement(tweet));
-  })
+  });
 }
 
