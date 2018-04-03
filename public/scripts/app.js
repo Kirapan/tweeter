@@ -85,13 +85,13 @@ function createTweetElement(tweet) {
 }
 
 function loadFirstTweet () {
-  $.getJSON('http://localhost:8080/tweets', function (data) {
+  $.getJSON('/tweets', function (data) {
     return $('#old-tweets').prepend(createTweetElement(data[data.length - 1]));
   });
 }
 
 function loadTweets() {
-   $.getJSON('http://localhost:8080/tweets', function (data) {
+   $.getJSON('/tweets', function (data) {
     return renderTweets(data);
   });
 }
